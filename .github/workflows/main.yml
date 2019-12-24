@@ -7,6 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
     
+    steps:
     # This is a small zip file, but a 1MB file inside it.
     - run: dd if=/dev/zero of=small-zip.txt count=1024 bs=1024
       

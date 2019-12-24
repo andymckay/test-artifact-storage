@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    # This is a small zip file, but a 1MB file inside it.
+    - run: dd if=/dev/zero of=small-zip.txt count=1024 bs=1024
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: my-artifact-2
+        path: small-zip.txt
